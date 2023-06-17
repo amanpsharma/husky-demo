@@ -10,55 +10,31 @@
     "test": "react-scripts test",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format:check",
-      "applypatch-msg": "echo \"[Husky] applypatch-msg\"",
-      "pre-applypatch": "echo \"[Husky] pre-applypatch\"",
-      "post-applypatch": "echo \"[Husky] post-applypatch\"",
-      "pre-merge-commit": "echo \"[Husky] pre-merge-commit\"",
-      "prepare-commit-msg": "echo \"[Husky] prepare-commit-msg\"",
-      "commit-msg": "echo \"[Husky] commit-msg\"",
-      "post-commit": "echo \"[Husky] post-commit\"",
-      "pre-rebase": "echo \"[Husky] pre-rebase\"",
-      "post-checkout": "echo \"[Husky] post-checkout\"",
-      "post-merge": "echo \"[Husky] post-merge\"",
-      "pre-push": "echo \"[Husky] pre-push\"",
-      "pre-receive": "echo \"[Husky] pre-receive\"",
-      "update": "echo \"[Husky] update\"",
-      "post-receive": "echo \"[Husky] post-receive\"",
-      "post-update": "echo \"[Husky] post-update\"",
-      "reference-transaction": "echo \"[Husky] reference-transaction\"",
-      "push-to-checkout": "echo \"[Husky] push-to-checkout\"",
-      "pre-auto-gc": "echo \"[Husky] pre-auto-gc\"",
-      "post-rewrite": "echo \"[Husky] post-rewrite\"",
-      "sendemail-validate": "echo \"[Husky] sendemail-validate\"",
-      "fsmonitor-watchman": "echo \"[Husky] fsmonitor-watchman\"",
-      "p4-changelist": "echo \"[Husky] p4-changelist\"",
-      "p4-prepare-changelist": "echo \"[Husky] p4-prepare-changelist\"",
-      "p4-post-changelist": "echo \"[Husky] p4-post-changelist\"",
-      "p4-pre-submit": "echo \"[Husky] p4-pre-submit\"",
-      "post-index-change": "echo \"[Husky] post-index-change\""
-    }
+    "format:check": "prettier --check .",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "lint-staged": "^13.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.59.0",
-    "@typescript-eslint/parser": "^5.59.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
     "@vitejs/plugin-react": "^4.0.0",
     "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,html.css}": "prettier --write",
+    "src/**/*.tsx": "eslint"
   }
 }
